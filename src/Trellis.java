@@ -1,4 +1,3 @@
-package Graphs;
 import java.util.*;
 
 //The Trellis Graph
@@ -171,30 +170,6 @@ public class Trellis {
 		}
 	}
 	
-	@SuppressWarnings("unused")
-	private double getMinCost() {
-		//get the minimum edge cost among all edges
-		double globMin = Double.POSITIVE_INFINITY;
-		double locMin = Double.POSITIVE_INFINITY;
-		
-		for (int d = 0; d < numDepth-1; d++) {
-			for (int n = 0; n < Elist.get(d).size(); n++) {
-				Edge e = Elist.get(d).get(n);	
-				double cost = e.getCost();
-				
-				if (cost < locMin) {
-					locMin = cost;
-				}
-			}			
-			
-			if (locMin < globMin) {
-				globMin = locMin;
-			}
-		}
-		
-		return globMin;
-	}
-	
 	private boolean changeCost(int nc, int nn, int from, double newCost) {
 		//given the starting window (from)
 		//and the from's node (nc) and (from+1)'s nn, change the 
@@ -220,7 +195,7 @@ public class Trellis {
 		return true;
 	}
 	
-	/*The Viterbi algorithm*/
+	/**The Viterbi algorithm**/
 	private double vitDecoder() {
 		//returns the minimum weight
 		

@@ -1,5 +1,3 @@
-package Graphs;
-
 public class Vertex {
 	private String val;
 	
